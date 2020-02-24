@@ -17,6 +17,8 @@
 		CE16A51E240410510075D7B4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A51D240410510075D7B4 /* RegisterViewController.swift */; };
 		CE16A520240424A70075D7B4 /* AdjustmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A51F240424A70075D7B4 /* AdjustmentViewController.swift */; };
 		CE16A522240424D40075D7B4 /* AmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A521240424D40075D7B4 /* AmountViewController.swift */; };
+		CE9078B624045312004A50A3 /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9078B524045312004A50A3 /* ProductsTableViewCell.swift */; };
+		CE9078B8240464C5004A50A3 /* ViewControllet+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9078B7240464C5004A50A3 /* ViewControllet+CoreData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		CE16A51D240410510075D7B4 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CE16A51F240424A70075D7B4 /* AdjustmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentViewController.swift; sourceTree = "<group>"; };
 		CE16A521240424D40075D7B4 /* AmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountViewController.swift; sourceTree = "<group>"; };
+		CE9078B524045312004A50A3 /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
+		CE9078B7240464C5004A50A3 /* ViewControllet+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllet+CoreData.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 				CE16A51D240410510075D7B4 /* RegisterViewController.swift */,
 				CE16A51F240424A70075D7B4 /* AdjustmentViewController.swift */,
 				CE16A521240424D40075D7B4 /* AmountViewController.swift */,
+				CE9078B524045312004A50A3 /* ProductsTableViewCell.swift */,
+				CE9078B7240464C5004A50A3 /* ViewControllet+CoreData.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -175,10 +181,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE16A50C24040BDC0075D7B4 /* AndrianoRenatoRodrigo.xcdatamodeld in Sources */,
+				CE9078B8240464C5004A50A3 /* ViewControllet+CoreData.swift in Sources */,
 				CE16A51E240410510075D7B4 /* RegisterViewController.swift in Sources */,
 				CE16A50224040BDC0075D7B4 /* AppDelegate.swift in Sources */,
 				CE16A50424040BDC0075D7B4 /* SceneDelegate.swift in Sources */,
 				CE16A51C24040FD60075D7B4 /* ListTableViewController.swift in Sources */,
+				CE9078B624045312004A50A3 /* ProductsTableViewCell.swift in Sources */,
 				CE16A520240424A70075D7B4 /* AdjustmentViewController.swift in Sources */,
 				CE16A522240424D40075D7B4 /* AmountViewController.swift in Sources */,
 			);

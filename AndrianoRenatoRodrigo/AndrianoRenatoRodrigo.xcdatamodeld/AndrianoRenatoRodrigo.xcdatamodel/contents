@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="true" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Cart" representedClassName="Cart" syncable="YES" codeGenerationType="class">
+        <attribute name="imgProduct" optional="YES" attributeType="Transformable"/>
+        <attribute name="name" optional="YES" attributeType="String" minValueString="0"/>
+        <attribute name="price" optional="YES" attributeType="Decimal" minValueString="0" defaultValueString="0.0"/>
+        <relationship name="states" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="States" inverseName="carts" inverseEntity="States"/>
+    </entity>
+    <entity name="States" representedClassName="States" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" minValueString="0"/>
+        <attribute name="tax" optional="YES" attributeType="Decimal" minValueString="0" defaultValueString="0.0"/>
+        <relationship name="carts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cart" inverseName="states" inverseEntity="Cart"/>
+    </entity>
+    <elements>
+        <element name="Cart" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="States" positionX="140.99609375" positionY="-155.18359375" width="128" height="88"/>
+    </elements>
 </model>

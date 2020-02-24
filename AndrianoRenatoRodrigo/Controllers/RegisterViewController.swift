@@ -9,7 +9,16 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
+    
+    @IBOutlet weak var tfName: UITextField!
+    @IBOutlet weak var ivProduct: UIImageView!
+    @IBOutlet weak var tfState: UITextField!
+    @IBOutlet weak var tfPrice: UITextField!
+    @IBOutlet weak var btAddEdit: UIButton!
+    @IBOutlet weak var btImg: UIButton!
+    
+    var cart: Cart!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,4 +36,27 @@ class RegisterViewController: UIViewController {
     }
     */
 
+    @IBAction func addEditImgProduct(_ sender: UIButton) {
+    }
+    
+    @IBAction func AddEditProduct(_ sender: UIButton) {
+        if cart == nil {
+            cart = Cart(context: context)
+        }
+        
+        cart.name = tfName.text
+        cart.price = NSDecimalNumber(string: tfPrice.text)
+        
+        do {
+//            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        print(cart.name)
+        print(cart.price)
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
 }
