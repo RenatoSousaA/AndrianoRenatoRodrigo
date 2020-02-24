@@ -9,23 +9,29 @@
 /* Begin PBXBuildFile section */
 		CE16A50224040BDC0075D7B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A50124040BDC0075D7B4 /* AppDelegate.swift */; };
 		CE16A50424040BDC0075D7B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A50324040BDC0075D7B4 /* SceneDelegate.swift */; };
-		CE16A50624040BDC0075D7B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A50524040BDC0075D7B4 /* ViewController.swift */; };
 		CE16A50924040BDC0075D7B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE16A50724040BDC0075D7B4 /* Main.storyboard */; };
 		CE16A50C24040BDC0075D7B4 /* AndrianoRenatoRodrigo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE16A50A24040BDC0075D7B4 /* AndrianoRenatoRodrigo.xcdatamodeld */; };
 		CE16A50E24040BDD0075D7B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE16A50D24040BDD0075D7B4 /* Assets.xcassets */; };
 		CE16A51124040BDD0075D7B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE16A50F24040BDD0075D7B4 /* LaunchScreen.storyboard */; };
+		CE16A51C24040FD60075D7B4 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A51B24040FD60075D7B4 /* ListTableViewController.swift */; };
+		CE16A51E240410510075D7B4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A51D240410510075D7B4 /* RegisterViewController.swift */; };
+		CE16A520240424A70075D7B4 /* AdjustmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A51F240424A70075D7B4 /* AdjustmentViewController.swift */; };
+		CE16A522240424D40075D7B4 /* AmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A521240424D40075D7B4 /* AmountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CE16A4FE24040BDC0075D7B4 /* AndrianoRenatoRodrigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndrianoRenatoRodrigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE16A4FE24040BDC0075D7B4 /* ComprasUSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComprasUSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE16A50124040BDC0075D7B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE16A50324040BDC0075D7B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE16A50524040BDC0075D7B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE16A50824040BDC0075D7B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE16A50B24040BDC0075D7B4 /* AndrianoRenatoRodrigo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AndrianoRenatoRodrigo.xcdatamodel; sourceTree = "<group>"; };
 		CE16A50D24040BDD0075D7B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE16A51024040BDD0075D7B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE16A51224040BDD0075D7B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE16A51B24040FD60075D7B4 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		CE16A51D240410510075D7B4 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		CE16A51F240424A70075D7B4 /* AdjustmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentViewController.swift; sourceTree = "<group>"; };
+		CE16A521240424D40075D7B4 /* AmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +56,7 @@
 		CE16A4FF24040BDC0075D7B4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE16A4FE24040BDC0075D7B4 /* AndrianoRenatoRodrigo.app */,
+				CE16A4FE24040BDC0075D7B4 /* ComprasUSA.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,14 +66,41 @@
 			children = (
 				CE16A50124040BDC0075D7B4 /* AppDelegate.swift */,
 				CE16A50324040BDC0075D7B4 /* SceneDelegate.swift */,
-				CE16A50524040BDC0075D7B4 /* ViewController.swift */,
-				CE16A50724040BDC0075D7B4 /* Main.storyboard */,
-				CE16A50D24040BDD0075D7B4 /* Assets.xcassets */,
-				CE16A50F24040BDD0075D7B4 /* LaunchScreen.storyboard */,
-				CE16A51224040BDD0075D7B4 /* Info.plist */,
+				CE16A51A24040CBE0075D7B4 /* Controllers */,
+				CE16A51824040C860075D7B4 /* Views */,
+				CE16A51924040CA00075D7B4 /* Assets */,
 				CE16A50A24040BDC0075D7B4 /* AndrianoRenatoRodrigo.xcdatamodeld */,
+				CE16A51224040BDD0075D7B4 /* Info.plist */,
 			);
 			path = AndrianoRenatoRodrigo;
+			sourceTree = "<group>";
+		};
+		CE16A51824040C860075D7B4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE16A50724040BDC0075D7B4 /* Main.storyboard */,
+				CE16A50F24040BDD0075D7B4 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE16A51924040CA00075D7B4 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				CE16A50D24040BDD0075D7B4 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		CE16A51A24040CBE0075D7B4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE16A51B24040FD60075D7B4 /* ListTableViewController.swift */,
+				CE16A51D240410510075D7B4 /* RegisterViewController.swift */,
+				CE16A51F240424A70075D7B4 /* AdjustmentViewController.swift */,
+				CE16A521240424D40075D7B4 /* AmountViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,7 +120,7 @@
 			);
 			name = AndrianoRenatoRodrigo;
 			productName = AndrianoRenatoRodrigo;
-			productReference = CE16A4FE24040BDC0075D7B4 /* AndrianoRenatoRodrigo.app */;
+			productReference = CE16A4FE24040BDC0075D7B4 /* ComprasUSA.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -141,10 +174,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE16A50624040BDC0075D7B4 /* ViewController.swift in Sources */,
 				CE16A50C24040BDC0075D7B4 /* AndrianoRenatoRodrigo.xcdatamodeld in Sources */,
+				CE16A51E240410510075D7B4 /* RegisterViewController.swift in Sources */,
 				CE16A50224040BDC0075D7B4 /* AppDelegate.swift in Sources */,
 				CE16A50424040BDC0075D7B4 /* SceneDelegate.swift in Sources */,
+				CE16A51C24040FD60075D7B4 /* ListTableViewController.swift in Sources */,
+				CE16A520240424A70075D7B4 /* AdjustmentViewController.swift in Sources */,
+				CE16A522240424D40075D7B4 /* AmountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +331,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-.AndrianoRenatoRodrigo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ComprasUSA;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -312,7 +348,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-.AndrianoRenatoRodrigo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ComprasUSA;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
