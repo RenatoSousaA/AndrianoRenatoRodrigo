@@ -23,5 +23,15 @@ class ProductsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func prepare(with product: Cart) {
+        lbName.text = product.name ?? ""
+//        lbPrice.text = "\(product.price)"
+        if let image = product.imgProduct as? UIImage {
+            ivProduct.image = image
+        } else {
+            ivProduct.image = UIImage(named: "")
+        }
+    }
 
 }

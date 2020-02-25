@@ -45,16 +45,13 @@ class RegisterViewController: UIViewController {
         }
         
         cart.name = tfName.text
-        cart.price = NSDecimalNumber(string: tfPrice.text)
+        cart.price = 22.2
         
         do {
-//            try context.save()
+            try context.save()
         } catch {
             print(error.localizedDescription)
         }
-        
-        print(cart.name)
-        print(cart.price)
         
         navigationController?.popViewController(animated: true)
     }

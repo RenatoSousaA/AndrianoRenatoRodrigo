@@ -2,13 +2,13 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="Cart" representedClassName="Cart" syncable="YES" codeGenerationType="class">
         <attribute name="imgProduct" optional="YES" attributeType="Transformable"/>
-        <attribute name="name" optional="YES" attributeType="String" minValueString="0"/>
-        <attribute name="price" optional="YES" attributeType="Decimal" minValueString="0" defaultValueString="0.0"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="states" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="States" inverseName="carts" inverseEntity="States"/>
     </entity>
     <entity name="States" representedClassName="States" syncable="YES" codeGenerationType="class">
-        <attribute name="name" optional="YES" attributeType="String" minValueString="0"/>
-        <attribute name="tax" optional="YES" attributeType="Decimal" minValueString="0" defaultValueString="0.0"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="tax" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="carts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cart" inverseName="states" inverseEntity="Cart"/>
     </entity>
     <elements>

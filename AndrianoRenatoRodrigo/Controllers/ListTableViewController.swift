@@ -10,9 +10,16 @@ import UIKit
 import CoreData
 
 class ListTableViewController: UITableViewController {
+    
+    var fetchedResultController: NSFetchedResultsController<Cart>!
+    var label = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        label.text = "Sua lista está vazia!"
+        label.textAlignment = .center
+        
         loadCart()
         
         // Uncomment the following line to preserve selection between presentations
@@ -24,29 +31,41 @@ class ListTableViewController: UITableViewController {
     
     func loadCart() {
         let fetchRequest: NSFetchRequest<Cart> = Cart.fetchRequest()
+        let sortDescritor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescritor]
+        
+        fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultController.delegate = self
+        
+        do {
+            try fetchedResultController.performFetch()
+        } catch {
+            print(error.localizedDescription)
+        }
+        
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        let count = fetchedResultController.fetchedObjects?.count ?? 0
+        tableView.backgroundView = count == 0 ? label : nil
+        return count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProductsTableViewCell
+        
+        guard let product = fetchedResultController.fetchedObjects?[indexPath.row] else {
+            return cell
+        }
+        
+        cell.prepare(with: product)
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -93,4 +112,17 @@ class ListTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension ListTableViewController: NSFetchedResultsControllerDelegate {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        
+        
+        switch type {
+            case .delete:
+                break
+            default:
+                tableView.reloadData()
+        }
+    }
 }
