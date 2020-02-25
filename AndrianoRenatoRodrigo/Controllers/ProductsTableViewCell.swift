@@ -25,8 +25,9 @@ class ProductsTableViewCell: UITableViewCell {
     }
     
     func prepare(with product: Cart) {
-        lbName.text = product.name ?? ""
-//        lbPrice.text = "\(product.price)"
+        lbName.text = product.name
+        lbPrice.text = "U$ \(product.price)"
+        
         if let image = product.imgProduct as? UIImage {
             ivProduct.image = image
         } else {

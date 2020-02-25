@@ -45,7 +45,7 @@ class RegisterViewController: UIViewController {
         }
         
         cart.name = tfName.text
-        cart.price = 22.2
+        cart.price = Double(tfPrice.text!) ?? 0
         
         do {
             try context.save()
