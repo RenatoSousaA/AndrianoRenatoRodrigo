@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="120" id="mR2-Sh-M3Q" customClass="ProductsTableViewCell" customModule="ComprasUSA" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="120" id="mR2-Sh-M3Q" customClass="ProductsTableViewCell" customModule="ComprasUSA" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mR2-Sh-M3Q" id="gMp-do-R0f">
@@ -63,6 +63,7 @@
                                     <outlet property="ivProduct" destination="OZ2-af-PZP" id="iAX-cq-7AI"/>
                                     <outlet property="lbName" destination="bSe-0A-cNV" id="pCW-ji-ZOt"/>
                                     <outlet property="lbPrice" destination="zc0-hu-pz4" id="Wf3-Tp-wVW"/>
+                                    <segue destination="VfJ-f3-8hh" kind="show" identifier="cellList" id="U0Q-vn-7gz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -109,7 +110,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProdutos" translatesAutoresizingMaskIntoConstraints="NO" id="sS7-r2-4sl">
-                                <rect key="frame" x="20" y="150" width="374.00000000000006" height="220"/>
+                                <rect key="frame" x="20" y="150" width="374" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="XaH-4y-qvD"/>
                                 </constraints>
@@ -210,6 +211,7 @@
                         <outlet property="btAddEdit" destination="88c-n2-eOO" id="O2o-ne-mnn"/>
                         <outlet property="btImg" destination="DGQ-zO-h8a" id="29O-hA-67k"/>
                         <outlet property="ivProduct" destination="sS7-r2-4sl" id="Snu-ce-Cp7"/>
+                        <outlet property="sbCard" destination="Jci-jM-5AV" id="aZa-2l-eav"/>
                         <outlet property="tfName" destination="76b-e1-K9f" id="vLB-mI-MT6"/>
                         <outlet property="tfPrice" destination="DNr-4a-4b8" id="iSp-rX-i55"/>
                         <outlet property="tfState" destination="1Lw-bQ-4XL" id="oDA-ob-HsF"/>
@@ -217,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ex4-U3-eOS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850.72463768115949" y="18.75"/>
+            <point key="canvasLocation" x="1119" y="19"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BPi-dq-Dfi">
@@ -428,5 +430,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hYw-PD-oDm"/>
+        <segue reference="U0Q-vn-7gz"/>
     </inferredMetricsTieBreakers>
 </document>

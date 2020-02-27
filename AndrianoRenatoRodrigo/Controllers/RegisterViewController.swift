@@ -16,9 +16,13 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var tfPrice: UITextField!
     @IBOutlet weak var btAddEdit: UIButton!
     @IBOutlet weak var btImg: UIButton!
+    @IBOutlet weak var sbCard: UISwitch!
     
     var statesManager = StatesManager.shared
+    var config = Configuration.shared
+    
     var cart: Cart!
+    
     lazy var pickerView: UIPickerView = {
         let pickerView = UIPickerView()
         pickerView.delegate = self
@@ -54,8 +58,32 @@ class RegisterViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         statesManager.loadStates(with: context )
+        loadProduct()
     }
     
+    func loadProduct() {
+        if cart != nil {
+            tfName.text = cart.name
+            tfPrice.text = "\(cart.price)"
+            sbCard.setOn(cart.isCard, animated: true)
+            let state = cart.states
+//            print(statesManager.states)
+//            print(state)
+//            if let stateSelected = state, let index = statesManager.states.index(of: stateSelected) {
+//                pickerView.selectedRow(inComponent: index)
+//            }
+            
+            if let image = cart.imgProduct as? UIImage {
+                ivProduct.image = image
+            } else {
+                ivProduct.image = UIImage(named: "imgProdutos")
+            }
+            
+            btImg.setTitle("Clique para alterar a imagem.", for: .normal)
+            title = "Alterar produto"
+            btAddEdit.setTitle("ALTERAR", for: .normal)
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -104,17 +132,18 @@ class RegisterViewController: UIViewController {
             cart = Cart(context: context)
         }
         
+        let priceUS = Double(tfPrice.text!) ?? 0
+        let priceRS = Double(priceUS * config.dolar)
+        
         cart.name = tfName.text
-        cart.price = Double(tfPrice.text!) ?? 0
+        cart.price = priceUS
+        cart.priceRS = priceRS
+        cart.imgProduct = ivProduct.image
+        cart.isCard = sbCard.isOn
         
         if !tfState.text!.isEmpty {
-            let state = statesManager.states[pickerView.selectedRow(inComponent: 0)].name
-            let tax = statesManager.states[pickerView.selectedRow(inComponent: 0)].tax
+            cart.states = statesManager.states[pickerView.selectedRow(inComponent: 0)]
         }
-        
-        cart.imgProduct = ivProduct.image
-        
-        print(cart.states ?? "")
         
         do {
             try context.save()
