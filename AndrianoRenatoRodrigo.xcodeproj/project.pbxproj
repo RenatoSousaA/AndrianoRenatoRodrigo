@@ -20,6 +20,8 @@
 		CE9078B8240464C5004A50A3 /* ViewControllet+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9078B7240464C5004A50A3 /* ViewControllet+CoreData.swift */; };
 		CE9078BA24057DED004A50A3 /* StatesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9078B924057DED004A50A3 /* StatesManager.swift */; };
 		CE9078BE24058250004A50A3 /* AdjustmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9078BD24058250004A50A3 /* AdjustmentTableViewController.swift */; };
+		CE9078C3240738F4004A50A3 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CE9078C2240738F4004A50A3 /* Settings.bundle */; };
+		CE9078C624073B98004A50A3 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9078C524073B98004A50A3 /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		CE9078B7240464C5004A50A3 /* ViewControllet+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllet+CoreData.swift"; sourceTree = "<group>"; };
 		CE9078B924057DED004A50A3 /* StatesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesManager.swift; sourceTree = "<group>"; };
 		CE9078BD24058250004A50A3 /* AdjustmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentTableViewController.swift; sourceTree = "<group>"; };
+		CE9078C2240738F4004A50A3 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		CE9078C524073B98004A50A3 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +78,10 @@
 				CE16A50324040BDC0075D7B4 /* SceneDelegate.swift */,
 				CE16A51A24040CBE0075D7B4 /* Controllers */,
 				CE16A51824040C860075D7B4 /* Views */,
+				CE9078C424073B85004A50A3 /* Models */,
 				CE16A51924040CA00075D7B4 /* Assets */,
 				CE16A50A24040BDC0075D7B4 /* AndrianoRenatoRodrigo.xcdatamodeld */,
+				CE9078C2240738F4004A50A3 /* Settings.bundle */,
 				CE16A51224040BDD0075D7B4 /* Info.plist */,
 			);
 			path = AndrianoRenatoRodrigo;
@@ -110,6 +116,14 @@
 				CE9078BD24058250004A50A3 /* AdjustmentTableViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CE9078C424073B85004A50A3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE9078C524073B98004A50A3 /* Configuration.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9078C3240738F4004A50A3 /* Settings.bundle in Resources */,
 				CE16A51124040BDD0075D7B4 /* LaunchScreen.storyboard in Resources */,
 				CE16A50E24040BDD0075D7B4 /* Assets.xcassets in Resources */,
 				CE16A50924040BDC0075D7B4 /* Main.storyboard in Resources */,
@@ -193,6 +208,7 @@
 				CE9078B624045312004A50A3 /* ProductsTableViewCell.swift in Sources */,
 				CE9078BE24058250004A50A3 /* AdjustmentTableViewController.swift in Sources */,
 				CE16A522240424D40075D7B4 /* AmountViewController.swift in Sources */,
+				CE9078C624073B98004A50A3 /* Configuration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

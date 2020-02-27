@@ -28,6 +28,7 @@ class StatesManager {
         let state = states[index]
         context.delete(state)
         do {
+            states.remove(at: index)
             try context.save()
         } catch {
             print(error.localizedDescription)

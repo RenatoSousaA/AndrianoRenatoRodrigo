@@ -4,15 +4,17 @@
         <attribute name="imgProduct" optional="YES" attributeType="Transformable"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="vlRS" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="vlUS" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="states" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="States" inverseName="carts" inverseEntity="States"/>
     </entity>
     <entity name="States" representedClassName="States" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="tax" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="carts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cart" inverseName="states" inverseEntity="Cart"/>
+        <relationship name="carts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Cart" inverseName="states" inverseEntity="Cart"/>
     </entity>
     <elements>
-        <element name="Cart" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Cart" positionX="-63" positionY="-18" width="128" height="133"/>
         <element name="States" positionX="140.99609375" positionY="-155.18359375" width="128" height="88"/>
     </elements>
 </model>

@@ -110,11 +110,11 @@ class RegisterViewController: UIViewController {
         if !tfState.text!.isEmpty {
             let state = statesManager.states[pickerView.selectedRow(inComponent: 0)].name
             let tax = statesManager.states[pickerView.selectedRow(inComponent: 0)].tax
-            cart.states?.name = state
-            cart.states?.tax = tax
         }
         
         cart.imgProduct = ivProduct.image
+        
+        print(cart.states ?? "")
         
         do {
             try context.save()

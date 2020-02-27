@@ -19,14 +19,12 @@ class ListTableViewController: UITableViewController {
         
         label.text = "Sua lista está vazia!"
         label.textAlignment = .center
-        
         loadCart()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     func loadCart() {

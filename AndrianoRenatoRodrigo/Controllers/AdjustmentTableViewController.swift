@@ -10,13 +10,26 @@ import UIKit
 
 class AdjustmentTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tvDolar: UITextField!
+    @IBOutlet weak var tvIof: UITextField!
     
     var statesManager = StatesManager.shared
+    var config = Configuration.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         loadStates()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        valuesDefaults()
+    }
+    
+    func valuesDefaults() {
+        tvDolar.text = "\(config.dolar)"
+        tvIof.text = "\(config.iof)"
     }
     
     func loadStates() {
@@ -28,9 +41,17 @@ class AdjustmentTableViewController: UIViewController {
         showAlert(with: nil)
     }
     
+    @IBAction func changeDolar(_ sender: UITextField) {
+        config.dolar = Double(sender.text!) ?? 0
+    }
+    
+    @IBAction func changeIof(_ sender: UITextField) {
+        config.iof = Double(sender.text!) ?? 0
+    }
+    
     func showAlert(with state: States?) {
         let title = state == nil ? "Adicionar" : "Editar"
-        let alert = UIAlertController(title: title + "Estado", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: title + " Estado", message: nil, preferredStyle: .alert)
         
         alert.addTextField { (textFieldState) in
             textFieldState.placeholder = "Nome do Estado"
@@ -67,8 +88,20 @@ class AdjustmentTableViewController: UIViewController {
 
 extension AdjustmentTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return statesManager.states.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let state = statesManager.states[indexPath.row]
+        showAlert(with: state)
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            statesManager.deleteState(index: indexPath.row, context: context)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
