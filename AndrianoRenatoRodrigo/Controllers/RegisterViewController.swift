@@ -66,12 +66,11 @@ class RegisterViewController: UIViewController {
             tfName.text = cart.name
             tfPrice.text = "\(cart.price)"
             sbCard.setOn(cart.isCard, animated: true)
-            let state = cart.states
-//            print(statesManager.states)
-//            print(state)
-//            if let stateSelected = state, let index = statesManager.states.index(of: stateSelected) {
-//                pickerView.selectedRow(inComponent: index)
-//            }
+                                    
+            if let stateSelected = cart.states, let index = statesManager.states.firstIndex(of: stateSelected) {
+                tfState.text = stateSelected.name
+                pickerView.selectRow(index, inComponent: 0, animated: false)
+            }
             
             if let image = cart.imgProduct as? UIImage {
                 ivProduct.image = image

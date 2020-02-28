@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WE0-x3-ZSD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WE0-x3-ZSD">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -257,7 +257,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="changeDolar:" destination="Wec-LW-KmF" eventType="valueChanged" id="i2T-SP-Zu4"/>
+                                    <action selector="changeDolar:" destination="Wec-LW-KmF" eventType="editingChanged" id="5bg-db-7Be"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IOF (%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clp-5i-fFb">
@@ -274,7 +274,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="changeIof:" destination="Wec-LW-KmF" eventType="valueChanged" id="6EB-Xw-Nhl"/>
+                                    <action selector="changeIof:" destination="Wec-LW-KmF" eventType="editingChanged" id="PP4-3G-l6T"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cotação do dolár (R$)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7o-ad-u7d">
@@ -355,7 +355,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qeb-zS-hg5"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Ajustes" image="cog" id="icV-ch-adk"/>
+                    <tabBarItem key="tabBarItem" title="Ajustes" image="products" id="icV-ch-adk"/>
                     <navigationItem key="navigationItem" id="y9F-cQ-XUg"/>
                     <connections>
                         <outlet property="tableView" destination="9cy-c6-Yg4" id="FvW-3h-m2E"/>
@@ -388,7 +388,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3642.4512" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAN-St-G1Q">
-                                <rect key="frame" x="81.333333333333329" y="297.66666666666669" width="251.33333333333337" height="57"/>
+                                <rect key="frame" x="81.666666666666686" y="297.66666666666669" width="251" height="57"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
                                 <color key="textColor" red="0.022632633767298748" green="0.7045130076142132" blue="2.3464996866036532e-16" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -422,7 +422,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cog" width="12.333333015441895" height="12.333333015441895"/>
         <image name="imgProdutos" width="206" height="179"/>
         <image name="ok" width="12.333333015441895" height="12.333333015441895"/>
         <image name="plus.circle" catalog="system" width="64" height="60"/>

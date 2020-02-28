@@ -18,13 +18,25 @@ class AdjustmentTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         loadStates()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         valuesDefaults()
+        
+        NotificationCenter.default.addObserver(self,
+        selector: #selector(handleAppDidBecomeActiveNotification(notification:)),
+        name: UIApplication.didBecomeActiveNotification,
+        object: nil)
+    }
+    
+    @objc func handleAppDidBecomeActiveNotification(notification: Notification) {
+        valuesDefaults()
+    }
+    
+    deinit {
+       NotificationCenter.default.removeObserver(self)
     }
     
     func valuesDefaults() {
