@@ -80,6 +80,14 @@ class AdjustmentTableViewController: UIViewController {
         }
         
         alert.addAction(UIAlertAction(title: title, style: .default, handler: { (action) in
+            
+            if alert.textFields?.first?.text == "" || alert.textFields![1].text! == "" {
+                let alert = UIAlertController(title: "Campos inválidos", message: "Todos campos devem ser preenchidos", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+            
             let state = state ?? States(context: self.context)
             state.name = alert.textFields?.first?.text
             state.tax = Double(alert.textFields![1].text!) ?? 0

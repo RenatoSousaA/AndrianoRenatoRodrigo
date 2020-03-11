@@ -117,7 +117,7 @@ class RegisterViewController: UIViewController {
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
     }
-    
+      
     func selectPicture(sourceType: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = sourceType
@@ -127,6 +127,13 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func AddEditProduct(_ sender: UIButton) {
+        if tfName.text == "" || tfPrice.text == "" || tfState.text == "" {
+            let alert = UIAlertController(title: "Campos inválidos", message: "Todos campos devem ser preenchidos", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
         if cart == nil {
             cart = Cart(context: context)
         }
