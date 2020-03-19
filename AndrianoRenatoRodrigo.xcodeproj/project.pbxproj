@@ -18,10 +18,12 @@
 		CE16A522240424D40075D7B4 /* AmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A521240424D40075D7B4 /* AmountViewController.swift */; };
 		CE9078B624045312004A50A3 /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9078B524045312004A50A3 /* ProductsTableViewCell.swift */; };
 		CE9078B8240464C5004A50A3 /* ViewControllet+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9078B7240464C5004A50A3 /* ViewControllet+CoreData.swift */; };
-		CE9078BA24057DED004A50A3 /* StatesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9078B924057DED004A50A3 /* StatesManager.swift */; };
+		CE9078BA24057DED004A50A3 /* StatesDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9078B924057DED004A50A3 /* StatesDAO.swift */; };
 		CE9078BE24058250004A50A3 /* AdjustmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9078BD24058250004A50A3 /* AdjustmentTableViewController.swift */; };
 		CE9078C3240738F4004A50A3 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CE9078C2240738F4004A50A3 /* Settings.bundle */; };
 		CE9078C624073B98004A50A3 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9078C524073B98004A50A3 /* Configuration.swift */; };
+		E08012EA2423069000CF8607 /* CartsDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08012E92423069000CF8607 /* CartsDAO.swift */; };
+		E08012EC2423074F00CF8607 /* PurchaseTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08012EB2423074F00CF8607 /* PurchaseTotal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,10 +40,12 @@
 		CE16A521240424D40075D7B4 /* AmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountViewController.swift; sourceTree = "<group>"; };
 		CE9078B524045312004A50A3 /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
 		CE9078B7240464C5004A50A3 /* ViewControllet+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllet+CoreData.swift"; sourceTree = "<group>"; };
-		CE9078B924057DED004A50A3 /* StatesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesManager.swift; sourceTree = "<group>"; };
+		CE9078B924057DED004A50A3 /* StatesDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesDAO.swift; sourceTree = "<group>"; };
 		CE9078BD24058250004A50A3 /* AdjustmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentTableViewController.swift; sourceTree = "<group>"; };
 		CE9078C2240738F4004A50A3 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		CE9078C524073B98004A50A3 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		E08012E92423069000CF8607 /* CartsDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartsDAO.swift; sourceTree = "<group>"; };
+		E08012EB2423074F00CF8607 /* PurchaseTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseTotal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 				CE16A51A24040CBE0075D7B4 /* Controllers */,
 				CE16A51824040C860075D7B4 /* Views */,
 				CE9078C424073B85004A50A3 /* Models */,
+				E08012ED24230F8E00CF8607 /* DAO */,
 				CE16A51924040CA00075D7B4 /* Assets */,
 				CE16A50A24040BDC0075D7B4 /* AndrianoRenatoRodrigo.xcdatamodeld */,
 				CE9078C2240738F4004A50A3 /* Settings.bundle */,
@@ -112,7 +117,6 @@
 				CE16A521240424D40075D7B4 /* AmountViewController.swift */,
 				CE9078B524045312004A50A3 /* ProductsTableViewCell.swift */,
 				CE9078B7240464C5004A50A3 /* ViewControllet+CoreData.swift */,
-				CE9078B924057DED004A50A3 /* StatesManager.swift */,
 				CE9078BD24058250004A50A3 /* AdjustmentTableViewController.swift */,
 			);
 			path = Controllers;
@@ -122,8 +126,18 @@
 			isa = PBXGroup;
 			children = (
 				CE9078C524073B98004A50A3 /* Configuration.swift */,
+				E08012EB2423074F00CF8607 /* PurchaseTotal.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E08012ED24230F8E00CF8607 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				E08012E92423069000CF8607 /* CartsDAO.swift */,
+				CE9078B924057DED004A50A3 /* StatesDAO.swift */,
+			);
+			path = DAO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,12 +213,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE16A50C24040BDC0075D7B4 /* AndrianoRenatoRodrigo.xcdatamodeld in Sources */,
-				CE9078BA24057DED004A50A3 /* StatesManager.swift in Sources */,
+				CE9078BA24057DED004A50A3 /* StatesDAO.swift in Sources */,
 				CE9078B8240464C5004A50A3 /* ViewControllet+CoreData.swift in Sources */,
 				CE16A51E240410510075D7B4 /* RegisterViewController.swift in Sources */,
 				CE16A50224040BDC0075D7B4 /* AppDelegate.swift in Sources */,
+				E08012EA2423069000CF8607 /* CartsDAO.swift in Sources */,
 				CE16A50424040BDC0075D7B4 /* SceneDelegate.swift in Sources */,
 				CE16A51C24040FD60075D7B4 /* ListTableViewController.swift in Sources */,
+				E08012EC2423074F00CF8607 /* PurchaseTotal.swift in Sources */,
 				CE9078B624045312004A50A3 /* ProductsTableViewCell.swift in Sources */,
 				CE9078BE24058250004A50A3 /* AdjustmentTableViewController.swift in Sources */,
 				CE16A522240424D40075D7B4 /* AmountViewController.swift in Sources */,

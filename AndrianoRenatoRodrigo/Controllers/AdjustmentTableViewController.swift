@@ -13,7 +13,7 @@ class AdjustmentTableViewController: UIViewController {
     @IBOutlet weak var tvDolar: UITextField!
     @IBOutlet weak var tvIof: UITextField!
     
-    var statesManager = StatesManager.shared
+    var statesDAO = StatesDAO.shared
     var config = Configuration.shared
 
     override func viewDidLoad() {
@@ -45,7 +45,7 @@ class AdjustmentTableViewController: UIViewController {
     }
     
     func loadStates() {
-        statesManager.loadStates(with: context)
+        statesDAO.loadStates(with: context)
         tableView.reloadData()
     }
     
@@ -108,18 +108,18 @@ class AdjustmentTableViewController: UIViewController {
 
 extension AdjustmentTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statesManager.states.count
+        return statesDAO.states.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let state = statesManager.states[indexPath.row]
+        let state = statesDAO.states[indexPath.row]
         showAlert(with: state)
         tableView.deselectRow(at: indexPath, animated: false)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            statesManager.deleteState(index: indexPath.row, context: context)
+            statesDAO.deleteState(index: indexPath.row, context: context)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
@@ -127,7 +127,7 @@ extension AdjustmentTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-        let state = statesManager.states[indexPath.row]
+        let state = statesDAO.states[indexPath.row]
         cell.textLabel?.text = state.name
         cell.detailTextLabel?.text = "\(state.tax)"
 

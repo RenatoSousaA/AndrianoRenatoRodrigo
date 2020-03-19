@@ -18,7 +18,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var btImg: UIButton!
     @IBOutlet weak var sbCard: UISwitch!
     
-    var statesManager = StatesManager.shared
+    var statesDAO = StatesDAO.shared
     var config = Configuration.shared
     
     var cart: Cart!
@@ -51,13 +51,13 @@ class RegisterViewController: UIViewController {
     }
     
     @objc func done() {
-        tfState.text = statesManager.states[pickerView.selectedRow(inComponent: 0)].name
+        tfState.text = statesDAO.states[pickerView.selectedRow(inComponent: 0)].name
         cancel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        statesManager.loadStates(with: context )
+        statesDAO.loadStates(with: context )
         loadProduct()
     }
     
@@ -67,7 +67,7 @@ class RegisterViewController: UIViewController {
             tfPrice.text = "\(cart.price)"
             sbCard.setOn(cart.isCard, animated: true)
                                     
-            if let stateSelected = cart.states, let index = statesManager.states.firstIndex(of: stateSelected) {
+            if let stateSelected = cart.states, let index = statesDAO.states.firstIndex(of: stateSelected) {
                 tfState.text = stateSelected.name
                 pickerView.selectRow(index, inComponent: 0, animated: false)
             }
@@ -148,7 +148,7 @@ class RegisterViewController: UIViewController {
         cart.isCard = sbCard.isOn
         
         if !tfState.text!.isEmpty {
-            cart.states = statesManager.states[pickerView.selectedRow(inComponent: 0)]
+            cart.states = statesDAO.states[pickerView.selectedRow(inComponent: 0)]
         }
         
         do {
@@ -168,11 +168,11 @@ extension RegisterViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return statesManager.states.count
+        return statesDAO.states.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let state = statesManager.states[row]
+        let state = statesDAO.states[row]
         return state.name ?? ""
     }
 }

@@ -387,14 +387,14 @@
                                 <color key="textColor" red="0.7045130076142132" green="0.0" blue="0.0065954785539902028" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3642.4512" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAN-St-G1Q">
-                                <rect key="frame" x="81.666666666666686" y="297.66666666666669" width="251" height="57"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3642.4512" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAN-St-G1Q">
+                                <rect key="frame" x="0.0" y="298" width="414" height="98"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
                                 <color key="textColor" red="0.022632633767298748" green="0.7045130076142132" blue="2.3464996866036532e-16" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Total em U$:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVi-15-reo">
-                                <rect key="frame" x="130.66666666666666" y="244.66666666666663" width="152.99999999999997" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Total em BRL:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVi-15-reo">
+                                <rect key="frame" x="124" y="244.66666666666663" width="166" height="33"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -415,10 +415,14 @@
                         <viewLayoutGuide key="safeArea" id="R5d-1M-Su2"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Total da Compra" image="ok" id="VgW-nI-jJQ"/>
+                    <connections>
+                        <outlet property="lblTotalValueInBrazilianReal" destination="VAN-St-G1Q" id="KGU-0t-V4L"/>
+                        <outlet property="lblTotalValueInDolar" destination="hSl-3K-wiL" id="ovr-Ks-vqx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qlW-Bk-eSi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1294" y="1031"/>
+            <point key="canvasLocation" x="-1294.2028985507247" y="1030.5803571428571"/>
         </scene>
     </scenes>
     <resources>

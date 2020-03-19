@@ -8,15 +8,18 @@
 
 import CoreData
 
-class StatesManager {
-    static let shared = StatesManager()
+class StatesDAO {
+    
+    private init() {
+    }
+    
+    static let shared = StatesDAO()
     var states: [States] = []
     
     func loadStates(with context: NSManagedObjectContext) {
         let fetchRequest: NSFetchRequest<States> = States.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        
+        fetchRequest.sortDescriptors = [sortDescriptor]        
         do {
             states = try context.fetch(fetchRequest)
         } catch {
@@ -35,7 +38,5 @@ class StatesManager {
         }
     }
     
-    private init() {
-        
-    }
+
 }
