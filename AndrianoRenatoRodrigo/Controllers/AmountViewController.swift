@@ -10,21 +10,15 @@ import UIKit
 
 class AmountViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    @IBOutlet weak var lblTotalValueInBrazilianReal: UILabel!
+    @IBOutlet weak var lblTotalValueInDolar: UILabel!
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let total: PurchaseTotal = CartsDAO.shared.getTotals(with: context)
+        lblTotalValueInBrazilianReal.text = "Price total: \(total.brlPriceTotal)\nIOF: \(String(format: "%.4f", total.iofTotal))\nTaxes: \(total.taxTotal)\nTotal: \(total.totalValueInBrazilianReal)"
+        lblTotalValueInDolar.text = "\(total.totalValueInDolar)"
     }
-    */
 
 }
