@@ -12,13 +12,23 @@ class AmountViewController: UIViewController {
 
     @IBOutlet weak var lblTotalValueInBrazilianReal: UILabel!
     @IBOutlet weak var lblTotalValueInDolar: UILabel!
+    @IBOutlet weak var lbIOF: UILabel!
+    @IBOutlet weak var lbTaxas: UILabel!
+    @IBOutlet weak var lbTotal: UILabel!
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        calcTotal()
+    }
+    
+    func calcTotal() {
         let total: PurchaseTotal = CartsDAO.shared.getTotals(with: context)
-        lblTotalValueInBrazilianReal.text = "Price total: \(total.brlPriceTotal)\nIOF: \(String(format: "%.4f", total.iofTotal))\nTaxes: \(total.taxTotal)\nTotal: \(total.totalValueInBrazilianReal)"
+        
         lblTotalValueInDolar.text = "\(total.totalValueInDolar)"
+        lblTotalValueInBrazilianReal.text = "\(total.brlPriceTotal)"
+        lbIOF.text = "\(String(format: "%.4f", total.iofTotal))"
+        lbTaxas.text = "\(total.taxTotal)"
+        lbTotal.text = "\(total.totalValueInBrazilianReal)"
     }
 
 }

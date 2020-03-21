@@ -33,16 +33,14 @@ class CartsDAO {
                 let iof = cart.priceRS * config.iof / 100
                 iofTotal += iof
                 
-                taxTotal += state.tax
+                if (cart.isCard) {
+                    taxTotal += state.tax
+                }
                 
-                brlPriceTotal += cart.priceRS
+                brlPriceTotal += cart.price * config.dolar
                 
                 totalValueInDolar += cart.price
-                totalValueInBrazilianReal += (state.tax + iof + cart.priceRS)
-                
-                //Simples conferencia
-                print("State \(state.name) Tax \(state.tax) IOF \(iof) Item \(cart.name) BRL \(cart.priceRS) $ \(cart.price)")
-                
+                totalValueInBrazilianReal += (state.tax + iof + brlPriceTotal)
             }
             } else {}
         }

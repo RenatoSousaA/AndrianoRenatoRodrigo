@@ -27,9 +27,14 @@ class RegisterViewController: UIViewController {
         let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.dataSource = self
-        pickerView.backgroundColor = .white
         return pickerView
     }()
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        tfName.resignFirstResponder()
+        tfPrice.resignFirstResponder()
+        tfState.resignFirstResponder()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

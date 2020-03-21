@@ -15,6 +15,11 @@ class AdjustmentTableViewController: UIViewController {
     
     var statesDAO = StatesDAO.shared
     var config = Configuration.shared
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        tvDolar.resignFirstResponder()
+        tvIof.resignFirstResponder()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
